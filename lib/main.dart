@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:sensors/sensors.dart';
+
 
 void main() => runApp(new MyApp());
 
@@ -123,6 +125,14 @@ class _DisplayPageState extends State<DisplayPage> {
           )
         : BoxDecoration(),
   );
+
+  @override
+  void initState() {
+    super.initState();
+    accelerometerEvents.listen((AccelerometerEvent event){
+        print(event);
+    });
+  }
 
 
 
