@@ -1,10 +1,22 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+// import 'package:flutter/services.dart';
 import 'package:sensors/sensors.dart';
+import './demo/view_demo.dart';
+import './demo/rxdart/rxdart_demo.dart';
 
 
-void main() => runApp(new MyApp());
+void main(){
+  ///横屏
+  // SystemChrome.setPreferredOrientations([
+  //   DeviceOrientation.landscapeLeft,
+  //   DeviceOrientation.landscapeRight
+  // ]);
+
+  runApp(new MyApp());
+
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -16,7 +28,7 @@ class MyApp extends StatelessWidget {
           title: new Text('Welcome to Flutter'),
         ),
         body: new Center(
-          child: DisplayPage(),
+          child: RxDartDemoHome(),
         ),
       ),
     );
@@ -133,9 +145,6 @@ class _DisplayPageState extends State<DisplayPage> {
         print(event);
     });
   }
-
-
-
 
   @override
   Widget build(BuildContext context) {
